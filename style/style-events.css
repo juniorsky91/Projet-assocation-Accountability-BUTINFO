@@ -23,7 +23,18 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 20px;
+    transition: transform 0.2s ease;
+
 }
+.event-card h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .event-card p {
+    margin: 5px 0;
+    color: #555;
+  }
 
 input[type="submit"] {
     background-color: #333;
