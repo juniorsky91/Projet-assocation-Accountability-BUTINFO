@@ -12,24 +12,39 @@ session_start();
 <body>
     <!-- Vidéo d'arrière-plan -->
     <video class="video-bg" autoplay muted loop>
-        <source src="background.mp4" type="video/mp4">
+        <source src="../video/video-sport.mp4" type="video/mp4">
     </video>
     
     <!-- Overlay -->
     <div class="overlay"></div>
     
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">MonSite</a>
-            <ul class="nav-menu">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="about.php">À propos</a></li>
-                <li><a href="services.php">Services</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Navigation -->
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <img src="../image/logo3.png" alt="Logo Accountability" class="logo">
+
+      <div class="nav-menu" id="nav-links">
+        <a href="../index.php">Accueil</a>
+        <a href="events.php">Événements</a>
+        <a href="#">Qui sommes-nous ?</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <?php if (isset($_SESSION['user'])): ?>
+        <a class="login" href="controller/logout.php">Se déconnecter</a>
+      <?php else: ?>
+        <a class="login" href="login.php">Se connecter</a>
+        <a class="register" href="register.php">S’enregistrer</a>
+      <?php endif; ?>
+    </div>
+  </div>
+</nav>
+
+
 
     <!-- Contenu principal -->
     <main class="main-content">
