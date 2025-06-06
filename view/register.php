@@ -2,6 +2,10 @@
 
 <h2>Inscription</h2>
 
+<?php if (isset($_GET['error']) && $_GET['error'] === 'email'): ?>
+  <p style="color:red;">Cet email est déjà utilisé.</p>
+<?php endif; ?>
+
 <form method="post" action="controller/actionRegister.php">
   <label for="nom">Nom :</label><br>
   <input type="text" name="nom" required><br><br>
