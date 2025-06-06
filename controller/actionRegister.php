@@ -1,5 +1,5 @@
 <?php
-require_once("model/userModel.php");
+require_once("../model/registerModel.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = htmlspecialchars($_POST['nom']);
