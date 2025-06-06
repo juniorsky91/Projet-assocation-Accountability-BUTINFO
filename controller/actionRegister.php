@@ -1,4 +1,5 @@
 <?php
+require_once("../model/connexion.php");
 require_once("model/userModel.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

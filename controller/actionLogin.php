@@ -1,10 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "yolou");
-
-if (!$conn) {
-    die("Erreur de connexion à la base.");
-}
+require_once("../model/connexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
