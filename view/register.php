@@ -1,5 +1,17 @@
 <?php include "header.php"; ?>
 
+<?php if (isset($_GET['success'])): ?>
+  <?php if ($_GET['success'] == '1'): ?>
+    <p style="color:green; text-align:center;">Inscription réussie. Vous pouvez maintenant vous connecter.</p>
+  <?php else: ?>
+    <?php if (isset($_GET['error']) && $_GET['error'] === 'email'): ?>
+      <p style="color:red; text-align:center;">Cet email est déjà enregistré.</p>
+    <?php else: ?>
+      <p style="color:red; text-align:center;">Une erreur s'est produite lors de l'inscription.</p>
+    <?php endif; ?>
+  <?php endif; ?>
+<?php endif; ?>
+
 <h2>Inscription</h2>
 
 <form method="post" action="controller/actionRegister.php">
