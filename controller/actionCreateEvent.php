@@ -9,10 +9,11 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 
-$titre = $_POST['titre'];
-$description = $_POST['description'];
+// Nettoyage des entrées utilisateur pour éviter l'injection de contenu
+$titre = htmlspecialchars(trim($_POST['titre']), ENT_QUOTES, 'UTF-8');
+$description = htmlspecialchars(trim($_POST['description']), ENT_QUOTES, 'UTF-8');
 $date = $_POST['date_event'];
-$type = $_POST['type_event'];
+$type = htmlspecialchars(trim($_POST['type_event']), ENT_QUOTES, 'UTF-8');
 
 //  On récupère l'ID de l'utilisateur connecté
 $id_createur = $_SESSION['user']['id'];
